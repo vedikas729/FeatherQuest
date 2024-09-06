@@ -42,7 +42,7 @@ const BirdListMaker = ({onFetchComplete}) => {
                 }
             );
 
-            console.log(apiKey);
+            console.log(response.data);
             onFetchComplete(response.data);
             navigate('/itinerary', {
                 state: { 
