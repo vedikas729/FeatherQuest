@@ -16,6 +16,7 @@ const ItineraryGetter = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    const apiKey = process.env.REACT_APP_API_KEY;
 
     // Function to fetch bird data
     const fetchBirdData = async () => {
@@ -41,7 +42,7 @@ const ItineraryGetter = () => {
                 {
                     headers: {
                         'Content-Type': 'application/json',
-                        'x-api-key': 'Mwy77HuKju5ekDQzP7VTL3pVwueAVgly829Bfkb8' // Replace with your actual API key
+                        'x-api-key': apiKey
                     }
                 }
             );

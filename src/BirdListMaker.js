@@ -10,6 +10,8 @@ const BirdListMaker = ({onFetchComplete}) => {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
+    const apiKey = process.env.REACT_APP_API_KEY;
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
@@ -35,11 +37,12 @@ const BirdListMaker = ({onFetchComplete}) => {
                 {
                     headers: {
                         'Content-Type': 'application/json',
-                        'x-api-key': 'Mwy77HuKju5ekDQzP7VTL3pVwueAVgly829Bfkb8' // Replace with your actual API key
+                        'x-api-key': apiKey // Replace with your actual API key
                     }
                 }
             );
 
+            console.log(apiKey);
             onFetchComplete(response.data);
             navigate('/itinerary', {
                 state: { 
