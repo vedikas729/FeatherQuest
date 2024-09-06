@@ -120,7 +120,7 @@ const ItineraryGetter = () => {
                 <>
                 <button onClick={fetchBirdData}>Plan My Quest</button>
                 <p></p>
-                <button onClick={() => navigate(-1)}>Go Back</button>
+                <button onClick={() => navigate(-1)}>Restart</button>
                 </>
             )}
         </div>
