@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/FeatherQuest/static/css/main.622c5a2a.css",
-    "main.js": "/FeatherQuest/static/js/main.6f0acbd1.js",
-    "static/js/453.c855038c.chunk.js": "/FeatherQuest/static/js/453.c855038c.chunk.js",
-    "index.html": "/FeatherQuest/index.html",
-    "main.622c5a2a.css.map": "/FeatherQuest/static/css/main.622c5a2a.css.map",
-    "main.6f0acbd1.js.map": "/FeatherQuest/static/js/main.6f0acbd1.js.map",
-    "453.c855038c.chunk.js.map": "/FeatherQuest/static/js/453.c855038c.chunk.js.map"
+    "main.css": "/featherquest/static/css/main.622c5a2a.css",
+    "main.js": "/featherquest/static/js/main.709a1bcb.js",
+    "static/js/453.c855038c.chunk.js": "/featherquest/static/js/453.c855038c.chunk.js",
+    "index.html": "/featherquest/index.html",
+    "main.622c5a2a.css.map": "/featherquest/static/css/main.622c5a2a.css.map",
+    "main.709a1bcb.js.map": "/featherquest/static/js/main.709a1bcb.js.map",
+    "453.c855038c.chunk.js.map": "/featherquest/static/js/453.c855038c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.622c5a2a.css",
-    "static/js/main.6f0acbd1.js"
+    "static/js/main.709a1bcb.js"
   ]
 }
