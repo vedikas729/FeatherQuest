@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={
+        <Route path="/FeatherQuest" element={
           <BirdListMaker onFetchComplete={(data) => console.log(data)}/>} />
         <Route path="/itinerary" element={<ItineraryGetter />} />
         <Route path="/final-itinerary" element={<FinalItinerary />} />
