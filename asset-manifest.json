@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/FeatherQuest/static/css/main.27032278.css",
-    "main.js": "/FeatherQuest/static/js/main.eee075da.js",
+    "main.js": "/FeatherQuest/static/js/main.be50c497.js",
     "static/js/453.c855038c.chunk.js": "/FeatherQuest/static/js/453.c855038c.chunk.js",
     "index.html": "/FeatherQuest/index.html",
     "main.27032278.css.map": "/FeatherQuest/static/css/main.27032278.css.map",
-    "main.eee075da.js.map": "/FeatherQuest/static/js/main.eee075da.js.map",
+    "main.be50c497.js.map": "/FeatherQuest/static/js/main.be50c497.js.map",
     "453.c855038c.chunk.js.map": "/FeatherQuest/static/js/453.c855038c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.27032278.css",
-    "static/js/main.eee075da.js"
+    "static/js/main.be50c497.js"
   ]
 }
