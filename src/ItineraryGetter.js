@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Select from 'react-select';
 
+
 // eslint-disable-next-line
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 
@@ -17,6 +18,29 @@ const ItineraryGetter = () => {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const apiKey = process.env.REACT_APP_API_KEY;
+
+    const customStyles = {
+        control: (provided, state) => ({
+            ...provided,
+            borderColor : '#767676',
+            backgroundColor : '#e2e2d5',
+        }),
+        input: (provided, state) => ({
+            ...provided,
+            backgroundColor : '#e2e2d5',
+        }),
+        option: (provided, state) => ({
+            ...provided,
+            backgroundColor : '#e2e2d5',
+/*
+            backgroundColor: state.isSelected ? '##eb3434' : '#eb3434',
+            '&:hover': {
+                backgroundColor: state.isSelected ? '#192E49' : '#f0f0f0',
+            },
+*/
+        }),
+    };
+
 
     // Function to fetch bird data
     const fetchBirdData = async () => {
@@ -49,8 +73,8 @@ const ItineraryGetter = () => {
 
             console.log(response.data);
             navigate('/final-itinerary', {
-                state: { 
-                    itineraryData: response.data, 
+                state: {
+                    itineraryData: response.data,
                 }
             });
         } catch (error) {
@@ -85,44 +109,60 @@ const ItineraryGetter = () => {
 
     return (
         <div className="itinerarygetter">
-            <h1>Select Your Birds</h1>
-            <h2>You may select up to 5 species.</h2>
-            <Select
-                isMulti
-                name="birdSpecies"
-                options={options}
-                value={selectedOptions}
-                onChange={handleChange}
-                placeholder="Select bird species..."
-                noResultsText="No results found"
-                loadingMessage="Loading..."
-                getOptionLabel={(option) => option.comName} // This displays only comName
-                getOptionValue={(option) => option.speciesCode} // This sets the value to speciesCode
-                isOptionDisabled={(option) => selectedOptions.length >= maxLimit && !selectedOptions.includes(option)}
-            />
-            {selectedOptions.length > 0 && (
-                <div>
-                    <h3>Selected Bird Species:</h3>
-                    <ul>
-                        {selectedOptions.map((option) => (
-                            <li key={option.speciesCode}>{option.comName}</li>
-                        ))}
-                    </ul>
+            <div className="topheader">
+                <div className="rectangle">
+                    <h2>FeatherQuest</h2>
                 </div>
-            )}
+            </div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <div>
+                <h1>Select Your Birds</h1>
+                <h3>You may select up to 5 species.</h3>
+                <Select classNae="selections"
+                    isMulti
+                    name="birdSpecies"
+                    options={options}
+                    value={selectedOptions}
+                    onChange={handleChange}
+                    placeholder="Select bird species..."
+                    noResultsText="No results found"
+                    loadingMessage="Loading..."
+                    getOptionLabel={(option) => option.comName} // This displays only comName
+                    getOptionValue={(option) => option.speciesCode} // This sets the value to speciesCode
+                    isOptionDisabled={(option) => selectedOptions.length >= maxLimit && !selectedOptions.includes(option)}
+                    styles={customStyles}
+                />
+                {/*
+                <br></br>
+                <h3>Selected Bird Species:</h3>
+                {selectedOptions.length > 0 && (
+                    <div>
+                        <ul>
+                            {selectedOptions.map((option) => (
+                                <li key={option.speciesCode}>{option.comName}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+                */}
 
-            {/* Add a button to trigger API call */}
-            {isLoading ? (
-                <button onClick={fetchBirdData} disabled>{isLoading ? 'Loading...' : 'Refresh Data'}</button>
-            ) : error ? (
-                <p>Error: {error}</p>
-            ) : (
-                <>
-                <button onClick={fetchBirdData}>Plan My Quest</button>
-                <p></p>
-                <button onClick={() => navigate(-1)}>Restart</button>
-                </>
-            )}
+                {/* Add a button to trigger API call */}
+                <br></br>
+                {isLoading ? (
+                    <button onClick={fetchBirdData} disabled>{isLoading ? 'Loading...' : 'Refresh Data'}</button>
+                ) : error ? (
+                    <p>Error: {error}</p>
+                ) : (
+                    <>
+                        <button onClick={fetchBirdData}>Plan My Quest</button>
+                        <p></p>
+                        <button onClick={() => navigate(-1)}>Restart</button>
+                    </>
+                )}
+            </div>
         </div>
     );
 };

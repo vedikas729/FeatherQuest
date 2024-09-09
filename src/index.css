@@ -2,6 +2,7 @@
 
 /* base styles */
 * {
+  background: #f5f6e5;
   margin: 0;
   font-family: "Quicksand";
   color: #333;
@@ -34,81 +35,149 @@
   padding: 20px;
 }
 
-/* blog previews / list */
-.blog-preview {
-  padding: 10px 16px;
-  margin: 20px 0;
-  border-bottom: 1px solid #fafafa;
+/* header stuff */
+.topheader {
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  left: 2px;
+  right: unset;
+  height: 69px;
+  width: 100%;
 }
-.blog-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-}
-.blog-preview h2 {
-  font-size: 20px;
-  color: #2ca81e;
-  margin-bottom: 8px;
-}
-.blog-preview a{
-  text-decoration: none;
-}
-
-/* blog details page */
-.blog-details h2 {
-  font-size: 20px;
-  color: #2ca81e;
-  margin-bottom: 10px;
-}
-.blog-details div {
-  margin: 20px 0;
+.rectangle {
+  display: inline-block;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background: #f5f6e5;
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  left: 0px;
+  right: unset;
+  height: 69px;
+  width: 100%;
 }
 
-/* create new blog form */
+/* home page */
 .birdlistmaker {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
 }
+.birdlistmaker bodyofpage {
+  position: absolute;
+  left: 20%;
+  z-index: 0;
+  top: 125px;
+  right: auto;
+  width: 942px;
+}
+
+.birdlistmaker formbox {
+  position: absolute;
+  z-index: 0;
+  top: 85px;
+  left: 416px;
+  right: unset;
+  height: 310px;
+  width: 526px;
+}
+.birdlistmaker howitworks {
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  left: 0px;
+  right: unset;
+  height: 540px;
+  width: 318px;
+}
 .birdlistmaker label {
   text-align: left;
   display: block;
 }
+.birdlistmaker h1 {
+  font-size: 48px;
+  color: #54a257;
+  font-weight: 800;
+  text-align: left;
+}
 .birdlistmaker h2 {
+  font-weight: 600;
+  font-size: 32px;
+  text-align: left;
+  color: #1d7320;
+  position: absolute;
+  z-index: 0;
+  top: 15px;
+  left: 24px;
+}
+.birdlistmaker h3 {
   font-size: 20px;
-  color: #2ca81e;
-  margin-bottom: 30px;
+  font-weight: 400;
+  text-align: left;
+}
+.birdlistmaker h4 {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+  color: #54a257;
+  margin-bottom: 10px;
 }
 .birdlistmaker input, .birdlistmaker textarea, .birdlistmaker select {
-  width: 100%;
-  padding: 6px 10px;
+  padding: 10px 10px;
   margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  border-radius: 5px;
+  border: 1px solid #767676;
+  background:#e2e2d5;
+  height: 52px;
+  width: 526px;
   box-sizing: border-box;
   display: block;
 }
 .birdlistmaker button {
-  background: #2ca81e;
   color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
+  font-weight: 500;
+  font-size: 32px;
   cursor: pointer;
+  gap: 10px;
+  padding: 10px 10px;
+  align-items: left;
+  justify-content: left;
+  border: 0px;
+  left: 0px;
+  border-radius: 15px;
+  background: #54a257;
+  position: absolute;
+  margin-top: 25px;
+  height: 72px;
+  width: 229px;
 }
 
-/* create new blog form */
+/* picking birds */
 .itinerarygetter {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
+}
+.itinerarygetter h1 {
+  font-size: 48px;
+  color: #54a257;
+  font-weight: 800;
+  text-align: left;
 }
 .itinerarygetter label {
   text-align: left;
   display: block;
 }
 .itinerarygetter h2 {
-  font-size: 20px;
-  color: #2ca81e;
-  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: left;
+  color: #1d7320;
+  position: absolute;
+  z-index: 0;
+  top: 15px;
+  left: 24px;
 }
 .itinerarygetter input, .itinerarygetter textarea, .itinerarygetter select {
   width: 100%;
@@ -126,9 +195,11 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 5px;
 }
 
-/* create new blog form */
+
+/* final itinerary page */
 .finalitinerary {
   max-width: 400px;
   margin: 0 auto;
@@ -138,10 +209,21 @@
   text-align: left;
   display: block;
 }
+.finalitinerary h1 {
+  font-size: 48px;
+  color: #54a257;
+  font-weight: 800;
+  text-align: center;
+}
 .finalitinerary h2 {
-  font-size: 20px;
-  color: #2ca81e;
-  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: left;
+  color: #1d7320;
+  position: absolute;
+  z-index: 0;
+  top: 15px;
+  left: 24px;
 }
 .finalitinerary input, .finalitinerary textarea, .finalitinerary select {
   width: 100%;
@@ -159,4 +241,5 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 5px;
 }
