@@ -66,30 +66,30 @@
 }
 .birdlistmaker bodyofpage {
   position: absolute;
-  left: 20%;
+  left: 10%;
   z-index: 0;
   top: 125px;
   right: auto;
-  width: 942px;
+  width: 75%;
 }
 
 .birdlistmaker formbox {
-  position: absolute;
+  position: relative;
   z-index: 0;
   top: 85px;
-  left: 416px;
+  /*left: 416px;*/
   right: unset;
   height: 310px;
-  width: 526px;
+  width: 100%;
 }
 .birdlistmaker howitworks {
-  position: absolute;
+  position: relative;
   z-index: 0;
   top: 0px;
-  left: 0px;
+  /*left: 0px;*/
   right: unset;
   height: 540px;
-  width: 318px;
+  width: 75%;
 }
 .birdlistmaker label {
   text-align: left;
@@ -130,27 +130,24 @@
   border: 1px solid #767676;
   background:#e2e2d5;
   height: 52px;
-  width: 526px;
+  width: 100%;
   box-sizing: border-box;
   display: block;
 }
 .birdlistmaker button {
-  color: #fff;
-  font-weight: 500;
-  font-size: 32px;
-  cursor: pointer;
-  gap: 10px;
   padding: 10px 10px;
-  align-items: left;
-  justify-content: left;
-  border: 0px;
-  left: 0px;
-  border-radius: 15px;
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
+  height: 50px;
+
   background: #54a257;
-  position: absolute;
-  margin-top: 25px;
-  height: 72px;
-  width: 229px;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 5px;
 }
 
 /* picking birds */
@@ -192,6 +189,12 @@
   display: block;
 }
 .itinerarygetter button {
+  padding: 10px 10px;
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
+  height: 50px;
+
   background: #54a257;
   color: #fff;
   border: 0;
@@ -238,6 +241,12 @@
   display: block;
 }
 .finalitinerary button {
+  padding: 10px 10px;
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
+  height: 50px;
+
   background: #54a257;
   color: #fff;
   border: 0;

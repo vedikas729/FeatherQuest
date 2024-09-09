@@ -25,9 +25,9 @@ const FinalItinerary = () => {
             <h3>Google Maps Link:</h3>
             <Link to={googleMapsLink}>Click Here</Link>
             <pre></pre>
-            <button onClick={() => window.history.back()}>Change Birds</button>
+            <button onClick={() => window.history.back()}>CHANGE BIRDS</button>
             <pre></pre>
-            <button onClick={() => navigate('/FeatherQuest')}>Plan a New Quest</button>
+            <button onClick={() => navigate('/FeatherQuest')}>PLAN A NEW QUEST</button>
         </div>
     );
 };

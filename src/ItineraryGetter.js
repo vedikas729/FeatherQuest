@@ -150,14 +150,14 @@ const ItineraryGetter = () => {
                 {/* Add a button to trigger API call */}
                 <br></br>
                 {isLoading ? (
-                    <button onClick={fetchBirdData} disabled>{isLoading ? 'Loading...' : 'Refresh Data'}</button>
+                    <button onClick={fetchBirdData} disabled>{isLoading ? 'LOADING...' : 'REFRESH DATA'}</button>
                 ) : error ? (
                     <p>Error: {error}</p>
                 ) : (
                     <>
-                        <button onClick={fetchBirdData}>Plan My Quest</button>
+                        <button onClick={fetchBirdData}>PLAN MY QUEST</button>
                         <p></p>
-                        <button onClick={() => navigate(-1)}>Restart</button>
+                        <button onClick={() => navigate(-1)}>RESTART</button>
                     </>
                 )}
             </div>
