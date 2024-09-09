@@ -23,7 +23,7 @@ const ItineraryGetter = () => {
         control: (provided, state) => ({
             ...provided,
             borderColor : '#767676',
-            backgroundColor : '#e2e2d5',
+            backgroundColor : '#f5f6e5',
         }),
         input: (provided, state) => ({
             ...provided,
@@ -32,12 +32,10 @@ const ItineraryGetter = () => {
         option: (provided, state) => ({
             ...provided,
             backgroundColor : '#e2e2d5',
-/*
-            backgroundColor: state.isSelected ? '##eb3434' : '#eb3434',
+
             '&:hover': {
                 backgroundColor: state.isSelected ? '#192E49' : '#f0f0f0',
             },
-*/
         }),
     };
 
