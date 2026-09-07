@@ -22,3 +22,16 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# backend dependencies and generated output
+/backend/.idea/
+/backend/.DS_Store
+/backend/**/.aws-sam/
+/backend/**/target/
+/backend/**/dependency-reduced-pom.xml
+/backend/**/*.iml
+
+# local backend configuration and credentials
+/backend/.env
+/backend/.env.*
+!.env.example
