@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# FeatherQuest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+FeatherQuest helps birders plan an excursion from a starting address. It uses
+recent eBird observations and Google Maps to find nearby target species and
+generate an efficient route.
 
-## Available Scripts
+## Live site
 
-In the project directory, you can run:
+[Open FeatherQuest](https://vedikas729.github.io/FeatherQuest/)
 
-### `npm start`
+## Repository structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `src/` - React frontend
+- `public/` - static frontend assets
+- `backend/birdingexcursion/` - Java Lambda source and Maven project
+- `backend/events/` - local invocation events
+- `backend/template.yaml` - AWS SAM infrastructure configuration
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The deployed frontend calls the AWS API Gateway endpoints for the backend. The
+backend repository is included here for maintenance and future deployments.
 
-### `npm test`
+## Frontend development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Requirements: Node.js and npm.
 
-### `npm run build`
+```bash
+npm ci
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The development server runs at `http://localhost:3000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The frontend expects `REACT_APP_API_KEY` when it is built. This is the API
+Gateway key used by the browser; configure it through your local environment or
+your GitHub Pages build environment, and never commit a real value.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run the frontend tests and production build with:
 
-### `npm run eject`
+```bash
+npm test -- --watchAll=false
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Backend development
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Requirements: Java, Maven, and AWS SAM CLI for deployment or local Lambda
+emulation.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The backend API client reads these variables at runtime:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+export EBIRD_API_KEY="your-ebird-api-key"
+export GOOGLEPLATFORM_API_KEY="your-google-maps-api-key"
+```
 
-## Learn More
+Do not commit these values. Configure them through AWS Lambda environment
+settings or a secrets manager for deployed functions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Run the backend tests from its Maven project directory:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd backend/birdingexcursion
+mvn test
+```
 
-### Code Splitting
+Generated Maven and SAM output is intentionally ignored by Git.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Deployment
 
-### Analyzing the Bundle Size
+The frontend can be deployed using the existing npm scripts:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm run deploy
+```
 
-### Making a Progressive Web App
+AWS deployment configuration is in `backend/template.yaml` and
+`backend/samconfig.toml`. Review the Lambda function names, handlers, API
+routes, and environment configuration before using `sam build` or `sam deploy`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Never commit API keys, private keys, `.env` files, Maven output, or SAM build
+artifacts.
